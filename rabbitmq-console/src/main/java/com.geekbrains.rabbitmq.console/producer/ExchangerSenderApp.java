@@ -18,6 +18,7 @@ public class ExchangerSenderApp {
     private final static String EXCHANGE_NAME = "example-2";
     private final static List<String> list = new ArrayList<>();
 
+
     static {
         list.add("php");
         list.add("java");
@@ -25,13 +26,15 @@ public class ExchangerSenderApp {
     }
 
     public static void main(String[] args) throws IOException {
+       MyFacade facade = new MyFacade();
+
         while (true) {
             System.out.println("Введи название языка статьи из списка :");
             list.forEach(System.out::println);
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String lang = br.readLine().trim().toLowerCase();
+
+            String lang = facade.getString();
             System.out.println("Введите полное имя файла :");
-            String file = br.readLine();
+            String file = facade.getString();
             byte[] article = Files.readAllBytes(Paths.get(file));
             ConnectionFactory factory = new ConnectionFactory();
             factory.setHost("localhost");
