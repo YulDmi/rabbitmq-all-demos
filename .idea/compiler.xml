@@ -7,7 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rabbitmq-console" />
+        <module name="rabbitmq-client" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consumer" target="1.5" />
+      <module name="rabbitmq-consumer" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

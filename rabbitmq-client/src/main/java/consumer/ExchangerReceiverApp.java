@@ -1,4 +1,4 @@
-package com.geekbrains.rabbitmq.console.consumer;
+package consumer;
 
 import com.rabbitmq.client.*;
 
